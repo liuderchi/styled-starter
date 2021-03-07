@@ -1,5 +1,7 @@
-import { P } from 'styled-system-html';
+import { P } from 'styled-system-html'
 
 export default (props) => (
-	<P pb={3} {...props}>{props.children}</P>
+  <P pb={3} {...props}>
+    {props.children}
+  </P>
 )

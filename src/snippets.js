@@ -14,7 +14,7 @@ export default (props) => (
 		</Div>
 		<SiteFooter />
 	</Div>
-)`;
+)`
 
 // ------------------------------------------------------------------------------
 
@@ -28,7 +28,7 @@ export default () => (
     	<NewPage />
     </Page>
 )
-`;
+`
 
 // ------------------------------------------------------------------------------
 
@@ -42,7 +42,7 @@ export const nextRoute = `module.exports = {
 		}
   	},
   	...
-`;
+`
 
 // ------------------------------------------------------------------------------
 
@@ -64,11 +64,11 @@ export default (props) => (
             </Footer>
         }
     </Blockquote>
-)`;
+)`
 
 // ------------------------------------------------------------------------------
 
-export const blockquoteUsage = `<Blockquote author="Grandpa Polacek">Son, you have the eyes of an eagle... a dead one.</Blockquote>`;
+export const blockquoteUsage = `<Blockquote author="Grandpa Polacek">Son, you have the eyes of an eagle... a dead one.</Blockquote>`
 
 // ------------------------------------------------------------------------------
 
@@ -77,7 +77,7 @@ export const headings = `<H1 f={6}>Heading 1</H1>
 <H3 f={4}>Heading 3</H3>
 <H4 f={3}>Heading 4</H4>
 <H5 f={2}>Heading 5</H5>
-<H6 f={1}>Heading 6</H6>`;
+<H6 f={1}>Heading 6</H6>`
 
 // ------------------------------------------------------------------------------
 
@@ -88,5 +88,4 @@ export const text = `<Text>A text element</Text>
 <Strong>Strong</Strong>
 <Small>Small</Small>
 <U>Underline</U>
-<Del>Del</Del>`;
-
+<Del>Del</Del>`

@@ -11,13 +11,18 @@ import Forms from './components/Forms'
 import Libraries from './components/Libraries'
 
 const content = {
-	'Introduction': Introduction,
-	'Buttons': Buttons,
-	'Cards': Cards,
-	'Forms': Forms,
-	'Libraries': Libraries,
+  Introduction: Introduction,
+  Buttons: Buttons,
+  Cards: Cards,
+  Forms: Forms,
+  Libraries: Libraries,
 }
 
 export default (props) => (
-	<DocsPage title="UI Components" content={content} defaultContent='Introduction' {...props} />
+  <DocsPage
+    title="UI Components"
+    content={content}
+    defaultContent="Introduction"
+    {...props}
+  />
 )

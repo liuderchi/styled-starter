@@ -1,5 +1,7 @@
-import Button from './Button';
+import Button from './Button'
 
 export default (props) => (
-	<Button is="a" {...props}>{props.children}</Button>
+  <Button is="a" {...props}>
+    {props.children}
+  </Button>
 )

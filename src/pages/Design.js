@@ -11,13 +11,18 @@ import Typography from './design/Typography'
 import Layout from './design/Layout'
 
 const content = {
-	'Introduction': Introduction,
-	'Theme': Theme,
-	'Color': Color,
-	'Typography': Typography,
-	'Layout': Layout,
+  Introduction: Introduction,
+  Theme: Theme,
+  Color: Color,
+  Typography: Typography,
+  Layout: Layout,
 }
 
 export default (props) => (
-	<DocsPage title="Design System" content={content} defaultContent='Introduction' {...props} />
+  <DocsPage
+    title="Design System"
+    content={content}
+    defaultContent="Introduction"
+    {...props}
+  />
 )

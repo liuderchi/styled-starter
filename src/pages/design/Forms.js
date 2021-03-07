@@ -1,21 +1,44 @@
-import { ThemeProvider } from 'styled-components';
-import { Flex, Box } from 'grid-styled';
-import { Div, Form, Label, Input, Span, TextArea, Select, Legend } from 'styled-system-html';
+import { ThemeProvider } from 'styled-components'
+import { Flex, Box } from 'grid-styled'
+import {
+  Div,
+  Form,
+  Label,
+  Input,
+  Span,
+  TextArea,
+  Select,
+  Legend,
+} from 'styled-system-html'
 import Section from '../../components/Section'
 import Heading from '../../components/Heading'
 import InputSubmit from '../../components/InputSubmit'
 import Link from '../../components/Link'
 import CodeSpecimen from '../../components/CodeSpecimen'
 
-const scope = { Flex, Box, Div, Form, Label, Input, Span, TextArea, Select, Legend, InputSubmit };
+const scope = {
+  Flex,
+  Box,
+  Div,
+  Form,
+  Label,
+  Input,
+  Span,
+  TextArea,
+  Select,
+  Legend,
+  InputSubmit,
+}
 
 export default (props) => (
-	<ThemeProvider theme={props.theme}>
-		<Div p={4} mx={1}>
-			<Div pt={3} px={2} maxWidth="960px">
-				<Section>
-	    			<Heading>Stacked Form</Heading>
-					<CodeSpecimen f="12px" code={`<Form pt={2} pb={5}>
+  <ThemeProvider theme={props.theme}>
+    <Div p={4} mx={1}>
+      <Div pt={3} px={2} maxWidth="960px">
+        <Section>
+          <Heading>Stacked Form</Heading>
+          <CodeSpecimen
+            f="12px"
+            code={`<Form pt={2} pb={5}>
 	<Div pb={3}>
 		<Div pb={1}>
 			<Label htmlFor="textInput">Text Input Label</Label>
@@ -67,14 +90,18 @@ export default (props) => (
 	<Div py={3}>
 		<InputSubmit bg="base" type="submit" value="Submit" />
 	</Div>
-</Form>`} scope={scope} />
-	    		</Section>
-			</Div>
+</Form>`}
+            scope={scope}
+          />
+        </Section>
+      </Div>
 
-			<Div pt={3} px={2} maxWidth="960px">
-				<Section>
-	    			<Heading>Responsive Inline Form</Heading>
-					<CodeSpecimen f="12px" code={`<Form pt={2} pb={5}>
+      <Div pt={3} px={2} maxWidth="960px">
+        <Section>
+          <Heading>Responsive Inline Form</Heading>
+          <CodeSpecimen
+            f="12px"
+            code={`<Form pt={2} pb={5}>
 	<Flex alignItems="flex-start" flexWrap="wrap" pb={3}>
 		<Box width={[1,1/3]} py={1}>
 			<Label textAlign={['left','right']} htmlFor="textInput" mr={2}>Text Input</Label>
@@ -136,9 +163,11 @@ export default (props) => (
 			<InputSubmit bg="base" type="submit" value="Submit" />
 		</Box>
 	</Flex>
-</Form>`} scope={scope} />
-	    		</Section>
-			</Div>
-		</Div>
-	</ThemeProvider>
+</Form>`}
+            scope={scope}
+          />
+        </Section>
+      </Div>
+    </Div>
+  </ThemeProvider>
 )

@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "next",
     "build": "rm -rf node_modules/.cache && next build",
+    "format": "prettier ./{src,pages} --write",
     "export": "next export",
     "start": "next start",
     "test": "mocha test/test",
