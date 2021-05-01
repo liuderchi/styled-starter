@@ -8,10 +8,10 @@ import CREDENTIAL from '../.credentials/kl-dev.json'
 import DB from '../.credentials/db.json'
 
 export const getStaticProps = async () => {
-  const doc = new GoogleSpreadsheet(DB.docID)
+  const doc = new GoogleSpreadsheet(DB?.About?.docID)
   await doc.useServiceAccountAuth(CREDENTIAL)
   await doc.loadInfo()
-  const sheet = doc.sheetsById[DB.sheetID]
+  const sheet = doc.sheetsById[DB?.About?.sheetID]
   const rows = await sheet.getRows()
 
   let aboutData = {}
