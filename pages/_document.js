@@ -1,4 +1,4 @@
-import Document, { Head, Main, NextScript } from 'next/document'
+import Document, { Html, Head, Main, NextScript } from 'next/document'
 import { ServerStyleSheet, injectGlobal } from 'styled-components'
 
 export default class MyDocument extends Document {
@@ -13,13 +13,13 @@ export default class MyDocument extends Document {
 
   render() {
     return (
-      <html>
+      <Html>
         <Head>{this.props.styleTags}</Head>
         <body>
           <Main />
           <NextScript />
         </body>
-      </html>
+      </Html>
     )
   }
 }
@@ -27,8 +27,8 @@ export default class MyDocument extends Document {
 // Global style
 // eslint-disable-next-line
 injectGlobal`
-  html{box-sizing:border-box;} *,*:before,*:after{box-sizing:inherit;} 
-  body{margin:0;font-family:'Nunito',sans-serif;line-height:1.6;} 
+  html{box-sizing:border-box;} *,*:before,*:after{box-sizing:inherit;}
+  body{margin:0;font-family:'Nunito',sans-serif;line-height:1.6;}
   button,input[type=submit]{cursor:pointer;font-family:inherit;}
   p{line-height:1.5;}
   select{padding:8px;}
