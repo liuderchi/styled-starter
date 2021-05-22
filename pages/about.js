@@ -1,26 +1,9 @@
-import { GoogleSpreadsheet } from 'google-spreadsheet'
-
 import About from '../src/pages/About'
 import App from '../src/containers/App'
-
-// TODO env
-import CREDENTIAL from '../.credentials/kl-dev.json'
-import DB from '../.credentials/db.json'
+import { fetchAbout } from '../src/lib/fetchSpreadsheet'
 
 export const getStaticProps = async () => {
-  const doc = new GoogleSpreadsheet(DB?.About?.docID)
-  await doc.useServiceAccountAuth(CREDENTIAL)
-  await doc.loadInfo()
-  const sheet = doc.sheetsById[DB?.About?.sheetID]
-  const rows = await sheet.getRows()
-
-  let aboutData = {}
-  if (rows?.[0]) {
-    // note: https://theoephraim.github.io/node-google-spreadsheet/#/?id=working-with-rows
-    const { _sheet, _rowNumber, _rawData, ...otherFields } = rows[0]
-    aboutData = otherFields
-  }
-
+  const aboutData = await fetchAbout()
   return {
     props: {
       about: {
