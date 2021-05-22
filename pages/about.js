@@ -15,7 +15,7 @@ export const getStaticProps = async () => {
 
 export default (props) => {
   return (
-    <App name="About" prefix="..">
+    <App prefix="..">
       <>
         <About />
         <pre>{JSON.stringify({ props }, null, 2)}</pre>

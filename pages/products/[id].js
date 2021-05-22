@@ -26,7 +26,7 @@ export const getStaticProps = async (path) => {
 export default (props) => {
   const { product } = props
   return (
-    <App name="About" prefix="..">
+    <App prefix="..">
       <>
         <pre style={{ paddingTop: 100 }}>
           {JSON.stringify({ props }, null, 2)}

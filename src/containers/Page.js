@@ -13,7 +13,7 @@ export default (props) => (
     <ThemeProvider theme={props.theme}>
       <Div>
         {props.enableChooseThemeModal && <ChooseThemeModal themes={themes} />}
-        <SiteNav theme={props.theme} current={props.name} />
+        <SiteNav theme={props.theme} />
         <Div>{React.cloneElement(props.children, { theme: props.theme })}</Div>
       </Div>
     </ThemeProvider>
