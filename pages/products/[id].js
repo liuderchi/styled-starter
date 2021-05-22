@@ -1,7 +1,7 @@
 import { GoogleSpreadsheet } from 'google-spreadsheet'
 
 import App from '../../src/containers/App'
-
+import sanitizeObj from '../../src/lib/sanitizeObj'
 // TODO env
 import CREDENTIAL from '../../.credentials/kl-dev.json'
 import DB from '../../.credentials/db.json'
@@ -17,7 +17,8 @@ const fetchProducts = async () => {
     rows?.map((row) => {
       // note: https://theoephraim.github.io/node-google-spreadsheet/#/?id=working-with-rows
       const { _sheet, _rowNumber, _rawData, ...productFields } = row
-      return productFields
+      // we need to remove nullish fields values to avoid SSG error
+      return sanitizeObj(productFields)
     }) || []
 
   return products
@@ -32,10 +33,11 @@ export const getStaticPaths = async () => {
   }
 }
 
-export const getStaticProps = async ({ params }) => {
+export const getStaticProps = async (path) => {
+  const { params } = path
   const products = await fetchProducts()
   const product =
-    (products || []).find((p) => params?.id && p.id === params.id) || {}
+    (products || []).find((p) => params?.id && p?.id === params.id) || {}
 
   return {
     props: {
