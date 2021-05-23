@@ -1,3 +1,4 @@
+require('dotenv').config()
 const assetPrefix = process.env.ENV_GH_PAGES ? '/styled-starter' : ''
 
 module.exports = {

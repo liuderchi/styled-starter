@@ -1,15 +1,14 @@
 import { GoogleSpreadsheet } from 'google-spreadsheet'
 import sanitizeObj from './sanitizeObj'
-// TODO env
-import CREDENTIAL from '../../.credentials/kl-dev.json'
-import DB from '../../.credentials/db.json'
 
-const doc = new GoogleSpreadsheet(DB?.Product?.docID)
+const CREDENTIAL = JSON.parse(process.env.GL_CREDENTIAL || "{}")
+const doc = new GoogleSpreadsheet(process.env.DB_SS_DOC_ID)
 
 export const fetchProducts = async () => {
   await doc.useServiceAccountAuth(CREDENTIAL)
   await doc.loadInfo()
-  const sheet = doc.sheetsById[DB?.Product?.sheetID]
+  const sheet = doc.sheetsById[process.env.DB_SS_PRODUCT_ID]
+
   const rows = await sheet.getRows()
 
   const products =
@@ -26,7 +25,7 @@ export const fetchProducts = async () => {
 export const fetchAbout = async () => {
   await doc.useServiceAccountAuth(CREDENTIAL)
   await doc.loadInfo()
-  const sheet = doc.sheetsById[DB?.About?.sheetID]
+  const sheet = doc.sheetsById[process.env.DB_SS_ABOUT_ID]
   const rows = await sheet.getRows()
 
   let aboutData = {}
