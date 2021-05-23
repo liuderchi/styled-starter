@@ -1,7 +1,17 @@
 import * as React from 'react'
+import styled from 'styled-components'
 import { Div, Img, H2, P } from 'styled-system-html'
 import 'react-responsive-carousel/lib/styles/carousel.min.css' // requires a loader
 import { Carousel } from 'react-responsive-carousel'
+import ReactMarkdown from 'react-markdown'
+import gfm from 'remark-gfm'
+
+const SpecWrap = styled.div`
+  table {
+    width: 100%;
+    text-align: center;
+  }
+`
 
 const Main = ({ product }) => {
   const images =
@@ -21,8 +31,14 @@ const Main = ({ product }) => {
           </div>
         ))}
       </Carousel>
-      <br />
+      <P>
+        {product.qty && `Quantity: ${product.qty}. `}
+        {product.updateAt && <small>(updated at: {product.updateAt})</small>}
+      </P>
       <P>{product.description}</P>
+      <SpecWrap>
+        <ReactMarkdown remarkPlugins={[gfm]} children={product.spec} />
+      </SpecWrap>
     </Div>
   )
 }
