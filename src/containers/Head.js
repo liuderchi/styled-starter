@@ -16,7 +16,7 @@ export default (props) => (
     />
     <meta name="theme-color" content="#000000" />
     <title>
-      Styled Starter | Starter Kit with React, Next.js and Styled Components
+      冠良國際企業有限公司 | KUAN LIANG INTERNATIONAL ENTERPRISE CO., LTD.
     </title>
     <link
       href="https://fonts.googleapis.com/css?family=Nunito:100,200,300,400,500,600,700,800,900"

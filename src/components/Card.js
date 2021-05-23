@@ -26,7 +26,7 @@ export default (props) => {
               display: 'block',
               maxWidth: '100px',
               maxHeight: '100px',
-              borderBottomRightRadius: '8px',
+              borderRadius: '8px',
             }}
             m={0}
             w={1}

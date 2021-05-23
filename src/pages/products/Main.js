@@ -18,10 +18,23 @@ const ProductGroupWrap = styled.div`
   }
 `
 
+const CarouselWrap = styled.div`
+  .carousel.carousel-slider {
+    max-width: 300px;
+  }
+`
+
 const SpecWrap = styled.div`
+  overflow: scroll;
   table {
     width: 100%;
+    border-collapse: collapse;
     text-align: center;
+  }
+  table,
+  th,
+  td {
+    border: 1px solid grey;
   }
 `
 
@@ -33,16 +46,18 @@ const Main = ({ product }) => {
       ?.filter((url) => !!url) || []
 
   return (
-    <Div css={{ paddingTop: '70px', margin: '0 30px' }}>
+    <Div css={{ paddingTop: '70px', margin: '0 30px 30px' }}>
       <H2>{product.title}</H2>
       <br />
-      <Carousel width={'50%'} showThumbs={false} showStatus={false}>
-        {images.map((imageUrl) => (
-          <div key={imageUrl}>
-            <img src={imageUrl} />
-          </div>
-        ))}
-      </Carousel>
+      <CarouselWrap>
+        <Carousel width={'100%'} showThumbs={false} showStatus={false}>
+          {images.map((imageUrl) => (
+            <div key={imageUrl}>
+              <img src={imageUrl} />
+            </div>
+          ))}
+        </Carousel>
+      </CarouselWrap>
       <P>
         {product.qty && `Quantity: ${product.qty}. `}
         {product.updateAt && <small>(updated at: {product.updateAt})</small>}
