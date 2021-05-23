@@ -3,8 +3,8 @@ import { ThemeProvider } from 'styled-components'
 import Head from './Head'
 import SiteNav from '../components/SiteNav'
 import { Div, Text, H3 } from 'styled-system-html'
-import themes from '../_Themes'
-import theme from '../_Theme'
+// import themes from '../_Themes'
+// import theme from '../_Theme'
 import ChooseThemeModal from '../components/ChooseThemeModal'
 
 export default (props) => (
@@ -12,7 +12,7 @@ export default (props) => (
     <Head prefix={props.prefix} />
     <ThemeProvider theme={props.theme}>
       <Div>
-        {props.enableChooseThemeModal && <ChooseThemeModal themes={themes} />}
+        {/* {props.enableChooseThemeModal && <ChooseThemeModal themes={themes} />} */}
         <SiteNav theme={props.theme} />
         <Div>{React.cloneElement(props.children, { theme: props.theme })}</Div>
       </Div>

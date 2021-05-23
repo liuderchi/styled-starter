@@ -1,4 +1,5 @@
 import App from '../../src/containers/App'
+import Main from '../../src/pages/products/Main'
 import { fetchProducts } from '../../src/lib/fetchSpreadsheet'
 
 export const getStaticPaths = async () => {
@@ -28,6 +29,7 @@ export default (props) => {
   return (
     <App prefix="..">
       <>
+        <Main product={product} />
         <pre style={{ paddingTop: 100 }}>
           {JSON.stringify({ props }, null, 2)}
         </pre>
