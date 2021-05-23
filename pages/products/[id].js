@@ -28,19 +28,7 @@ export default (props) => {
   const { product } = props
   return (
     <App prefix="..">
-      <>
-        <Main product={product} />
-        <pre style={{ paddingTop: 100 }}>
-          {JSON.stringify({ props }, null, 2)}
-        </pre>
-        <button
-          onClick={() => {
-            console.log({ product })
-          }}
-        >
-          test
-        </button>
-      </>
+      <Main product={product} />
     </App>
   )
 }

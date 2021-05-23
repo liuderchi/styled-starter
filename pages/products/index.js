@@ -1,5 +1,6 @@
 import App from '../../src/containers/App'
 import { fetchProducts } from '../../src/lib/fetchSpreadsheet'
+import { List } from '../../src/pages/products/Main'
 
 export const getStaticProps = async (path) => {
   const products = await fetchProducts()
@@ -14,18 +15,7 @@ export default (props) => {
   const { products } = props
   return (
     <App prefix="..">
-      <>
-        <pre style={{ paddingTop: 100 }}>
-          {JSON.stringify({ props }, null, 2)}
-        </pre>
-        <button
-          onClick={() => {
-            console.log({ products })
-          }}
-        >
-          test
-        </button>
-      </>
+      <List products={products} />
     </App>
   )
 }
